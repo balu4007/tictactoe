@@ -4,7 +4,12 @@
         <title>Home</title>
     </head>
     <body>
-        <h1>Welcome</h1>
-        Hi currently we have {{ ngames }} running games in our app
+        <h1>Welcome {{ user.username}}</h1>
+        This are the active games for the player
+        <ul>
+            {%for g in player_games%}
+                <li> Game :{{g.id}}: {{g.first_player}} vs {{g.second_player}}</li>
+            {%endfor%}
+        </ul>
     </body>
 </html>
